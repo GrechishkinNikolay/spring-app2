@@ -7,9 +7,11 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="testBean"
-          class="ru.grechishkin.springtraining.TestBean">
-        <constructor-arg value="Nikolaichik"/>
+    <bean id="musicBean"
+          class="ru.grechishkin.springtraining.RockMusic">
+    </bean>
+    <bean id="voiceBean"
+          class="ru.grechishkin.springtraining.Voice">
     </bean>
 
 </beans>
