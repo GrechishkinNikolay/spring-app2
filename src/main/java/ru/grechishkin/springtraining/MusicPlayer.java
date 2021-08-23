@@ -1,17 +1,28 @@
 package ru.grechishkin.springtraining;
 
-public class MusicPlayer {
-    private Music music;
+import java.util.List;
 
-    public MusicPlayer(Music music) {
-        this.music = music;
+public class MusicPlayer {
+
+    private List<Music> musicList;
+    private int volume;
+    private String name;
+
+    public MusicPlayer() {
     }
 
     public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+        for (Music music :
+            musicList) {
+            System.out.println("Playing: " + music.getSong());
+        }
     }
 
-    public void setMusic(Music music) {
-        this.music = music;
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

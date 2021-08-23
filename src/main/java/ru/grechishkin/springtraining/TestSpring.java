@@ -12,7 +12,7 @@ public class TestSpring {
 
 //        MusicPlayer musicPlayer = new MusicPlayer(music);
 
-        musicPlayer.playMusic();
+        System.out.println(musicPlayer);
 
         context.close();
     }
