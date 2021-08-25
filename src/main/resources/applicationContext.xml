@@ -6,17 +6,6 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-  <context:property-placeholder location="musicPlayer.properties"/>
-
-  <bean id="musicBean"
-    class="ru.grechishkin.springtraining.ClassicalMusic">
-  </bean>
-
-  <bean id="musicPlayerBean"
-    class="ru.grechishkin.springtraining.MusicPlayer">
-    <constructor-arg name="music" ref="musicBean"/>
-    <property name="name" value="${musicPlayer.name}"/>
-    <property name="volume" value="${musicPlayer.volume}"/>
-  </bean>
+  <context:component-scan base-package="ru.grechishkin.springtraining"/>
 
 </beans>

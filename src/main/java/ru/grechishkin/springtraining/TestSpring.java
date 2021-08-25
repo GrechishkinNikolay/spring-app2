@@ -3,17 +3,18 @@ package ru.grechishkin.springtraining;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
+
     public static void main(String[] args) {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml");
+            "applicationContext.xml");
+        RockMusic musicBean = context.getBean("rockMusic", RockMusic.class);
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayerBean", MusicPlayer.class);
+        MusicPlayer musicPlayer = new MusicPlayer(musicBean);
 
-//        MusicPlayer musicPlayer = new MusicPlayer(music);
+        musicPlayer.setVolume(100);
 
-        System.out.println(musicPlayer);
-
+        musicPlayer.playMusic();
         context.close();
     }
 }

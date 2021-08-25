@@ -1,14 +1,16 @@
 package ru.grechishkin.springtraining;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MusicPlayer {
 
     private List<Music> musicList;
     private int volume;
-    private String name;
 
-    public MusicPlayer() {
+    public MusicPlayer(Music music) {
+        this.musicList = new ArrayList<Music>();
+        this.musicList.add(music);
     }
 
     public void playMusic() {
@@ -22,7 +24,12 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public String toString() {
+        return "MusicPlayer{" +
+                   "musicList=" + musicList +
+                   ", volume=" + volume +
+                   ", name='" + name + '\'' +
+                   '}';
     }
 }
