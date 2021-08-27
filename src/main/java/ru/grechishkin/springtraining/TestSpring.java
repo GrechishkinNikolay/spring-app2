@@ -5,16 +5,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestSpring {
 
     public static void main(String[] args) {
-
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
             "applicationContext.xml");
-        RockMusic musicBean = context.getBean("rockMusic", RockMusic.class);
+        Computer computer = context.getBean("computer", Computer.class);
 
-        MusicPlayer musicPlayer = new MusicPlayer(musicBean);
+        System.out.println(computer);
 
-        musicPlayer.setVolume(100);
-
-        musicPlayer.playMusic();
         context.close();
     }
 }

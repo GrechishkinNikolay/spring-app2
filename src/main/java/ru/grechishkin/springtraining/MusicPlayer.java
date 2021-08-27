@@ -2,22 +2,24 @@ package ru.grechishkin.springtraining;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
 
     private List<Music> musicList;
     private int volume;
 
-    public MusicPlayer(Music music) {
-        this.musicList = new ArrayList<Music>();
-        this.musicList.add(music);
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        musicList = new ArrayList<>();
+        musicList.add(classicalMusic);
+        musicList.add(rockMusic);
     }
 
-    public void playMusic() {
-        for (Music music :
-            musicList) {
-            System.out.println("Playing: " + music.getSong());
-        }
+    public String playMusic() {
+        return "Playing: " + musicList.get(0).getSong() + " and " + musicList.get(1).getSong();
     }
 
     public void setVolume(int volume) {
@@ -29,7 +31,6 @@ public class MusicPlayer {
         return "MusicPlayer{" +
                    "musicList=" + musicList +
                    ", volume=" + volume +
-                   ", name='" + name + '\'' +
                    '}';
     }
 }
