@@ -1,15 +1,16 @@
-package ru.grechishkin.springtraining;
+package ru.grechishkin.springtraining.musics;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import ru.grechishkin.springtraining.Music;
+import ru.grechishkin.springtraining.Song;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
 public class ClassicalMusic implements Music {
 
     List<Song> songs;

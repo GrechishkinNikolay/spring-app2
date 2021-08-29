@@ -1,10 +1,11 @@
-package ru.grechishkin.springtraining;
+package ru.grechishkin.springtraining.musics;
 
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Component;
+import ru.grechishkin.springtraining.Music;
+import ru.grechishkin.springtraining.Song;
 
-@Component
 public class RockMusic implements Music {
 
     List<Song> songs;
